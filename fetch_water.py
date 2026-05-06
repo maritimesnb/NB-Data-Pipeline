@@ -66,3 +66,52 @@ def main():
  
 if __name__ == '__main__': 
     main() 
+import csv
+
+def flatten_to_csv(all_data, filename):
+    rows = []
+    for station_id, station_data in all_data['stations'].items():
+        for feature in station_data.get('features', []):
+            props = feature.get('properties', {})
+            geom  = feature.get('geometry', {}).get('coordinates', [None, None])
+            level = props.get('LEVEL')
+            
+            # Flood risk classification
+            thresholds = {
+                '01AO001': (5.5, 6.0, 6.4),  # Fredericton
+                '01AJ010': (4.0, 4.8, 5.5),  # Grand Falls
+            }.get(station_id, (4.0, 5.0, 6.0))
+            
+            if level is None:
+                status = 'UNKNOWN'
+            elif level >= thresholds[2]:
+                status = 'FLOOD'
+            elif level >= thresholds[1]:
+                status = 'WARNING'
+            elif level >= thresholds[0]:
+                status = 'WATCH'
+            else:
+                status = 'NORMAL'
+
+            rows.append({
+                'station_id':    station_id,
+                'station_name':  props.get('STATION_NAME', ''),
+                'timestamp':     props.get('DATETIME', ''),
+                'water_level_m': level,
+                'discharge_cms': props.get('DISCHARGE'),
+                'longitude':     geom[0] if geom else None,
+                'latitude':      geom[1] if geom else None,
+                'flood_status':  status,
+                'fetched_at':    all_data['fetched_at']
+            })
+
+    os.makedirs('data/clean', exist_ok=True)
+    with open(filename, 'w', newline='') as f:
+        writer = csv.DictWriter(f, fieldnames=rows[0].keys())
+        writer.writeheader()
+        writer.writerows(rows)
+    print(f'Clean CSV saved: {filename}')
+
+# Add these two lines inside your main() function after saving the JSON:
+flatten_to_csv(all_data, 'data/clean/latest_clean.csv')
+flatten_to_csv(all_data, f'data/clean/water_clean_{timestamp}.csv')
