@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-10-22T195430Z",
+  "fetched_at": "2026-10-22T230959Z",
   "stations": {
     "01AK007": {
       "type": "FeatureCollection",
@@ -18005,7 +18005,7 @@
           "id": "01AK007.2026-09-24T15:30:00Z"
         }
       ],
-      "numberMatched": 8910,
+      "numberMatched": 8949,
       "numberReturned": 720,
       "links": [
         {
@@ -18039,7 +18039,7 @@
           "href": "https://api.weather.gc.ca/collections/hydrometric-realtime"
         }
       ],
-      "timeStamp": "2026-10-22T19:54:30.585604Z"
+      "timeStamp": "2026-10-22T23:09:59.523129Z"
     },
     "01AJ010": {
       "type": "FeatureCollection",
@@ -36045,7 +36045,7 @@
           "id": "01AJ010.2026-09-24T03:35:00Z"
         }
       ],
-      "numberMatched": 8822,
+      "numberMatched": 8864,
       "numberReturned": 720,
       "links": [
         {
@@ -36079,7 +36079,7 @@
           "href": "https://api.weather.gc.ca/collections/hydrometric-realtime"
         }
       ],
-      "timeStamp": "2026-10-22T19:54:31.303506Z"
+      "timeStamp": "2026-10-22T23:10:00.141097Z"
     },
     "01AK001": {
       "type": "FeatureCollection",
@@ -54085,7 +54085,7 @@
           "id": "01AK001.2026-09-24T15:55:00Z"
         }
       ],
-      "numberMatched": 8815,
+      "numberMatched": 8863,
       "numberReturned": 720,
       "links": [
         {
@@ -54119,7 +54119,7 @@
           "href": "https://api.weather.gc.ca/collections/hydrometric-realtime"
         }
       ],
-      "timeStamp": "2026-10-22T19:54:31.625993Z"
+      "timeStamp": "2026-10-22T23:10:00.481364Z"
     },
     "01AQ001": {
       "type": "FeatureCollection",
@@ -72125,7 +72125,7 @@
           "id": "01AQ001.2026-09-24T15:55:00Z"
         }
       ],
-      "numberMatched": 8821,
+      "numberMatched": 8863,
       "numberReturned": 720,
       "links": [
         {
@@ -72159,7 +72159,7 @@
           "href": "https://api.weather.gc.ca/collections/hydrometric-realtime"
         }
       ],
-      "timeStamp": "2026-10-22T19:54:33.182481Z"
+      "timeStamp": "2026-10-22T23:10:01.589601Z"
     },
     "01AP004": {
       "type": "FeatureCollection",
@@ -90165,7 +90165,7 @@
           "id": "01AP004.2026-09-24T03:30:00Z"
         }
       ],
-      "numberMatched": 8815,
+      "numberMatched": 8863,
       "numberReturned": 720,
       "links": [
         {
@@ -90199,7 +90199,7 @@
           "href": "https://api.weather.gc.ca/collections/hydrometric-realtime"
         }
       ],
-      "timeStamp": "2026-10-22T19:54:33.496861Z"
+      "timeStamp": "2026-10-22T23:10:01.917201Z"
     }
   }
 }
